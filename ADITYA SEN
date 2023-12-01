@@ -1,0 +1,53 @@
+import random
+
+def game():
+    print("Welcome to the Adventure Game!")
+    print("You find yourself in a mysterious land. Your goal is to reach the treasure.")
+    print("You are at a crossroad. Do you want to go left or right?")
+
+    direction = input("Enter 'left' or 'right': ").lower()
+
+    if direction == "left":
+        print("You chose to go left.")
+        print("You encounter a river. Do you want to swim across or find another way?")
+
+        choice = input("Enter 'swim' or 'find another way': ").lower()
+
+        if choice == "swim":
+            print("You attempt to swim across the river...")
+            outcome = random.choice([True, False])
+
+            if outcome:
+                print("Congratulations! You successfully crossed the river and continue your journey.")
+                print("You found the treasure! You win!")
+            else:
+                print("Uh oh! You were swept away by the river. Game over!")
+
+        elif choice == "find another way":
+            print("You decide to find another way.")
+            print("You discover a hidden path that leads you to the treasure! You win!")
+
+        else:
+            print("Invalid choice. Game over!")
+
+    elif direction == "right":
+        print("You chose to go right.")
+        print("You encounter a giant cave. Do you want to enter or find another path?")
+
+        choice = input("Enter 'enter' or 'find another path': ").lower()
+
+        if choice == "enter":
+            print("You enter the cave...")
+            print("You find yourself face-to-face with a dragon! Game over!")
+
+        elif choice == "find another path":
+            print("You search for another path.")
+            print("After some time, you find a hidden door that leads to the treasure! You win!")
+
+        else:
+            print("Invalid choice. Game over!")
+
+    else:
+        print("Invalid choice. Game over!")
+
+game()
